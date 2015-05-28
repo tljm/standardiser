@@ -110,6 +110,13 @@ def apply(input_mol, output_rules_applied=None):
 
         non_salt_frags.append(frag)
 
+    # TODO: This may result in allowing some "salt-only" molcules.
+    # TODO: Update docs!
+    if len(non_salt_frags) == 0: # if no non salt
+        if unsalt.is_salt(mol): # if entire mol is salt
+            non_salt_frags.append(mol)
+
+
     if len(non_salt_frags) == 0:
 
         raise StandardiseException("no_non_salt")
