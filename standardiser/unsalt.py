@@ -43,6 +43,9 @@ use_inchi = False ### Chem.INCHI_AVAILABLE
 salts_file = "salts.tsv"
 
 non_organic_elements = "[!#1&!#6&!#7&!#8&!#9&!#15&!#16&!#17&!#35&!#53]"
+# TODO: Chaeck if this tmp change has any influence on results.
+# boron!
+non_organic_elements = non_organic_elements[:-1]+"&!#5]"
 
 ########################################################################
 
